@@ -15,12 +15,12 @@
   </head>
   <body>
     <header>
-      <img src="" alt="Logo de la App" />
+      <img src="img/logo.jpg" alt="Logo de la App" />
       <h2>KANBAN</h2>
     </header>
 
     <div class="container mt-5 d-flex justify-content-center text-white ">
-        <form action="post" class="bg-light">
+        <form action="post">
             <div class="form-group mb-3">
                 <label for="nombre">Nombre de Tarea:</label>
                 <input type="text" class="form-control" id="nombre" placeholder="Introduce el nombre de la Tarea">
@@ -32,5 +32,24 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
+
+    <div class="container mt-5">
+      <div class="row " >
+        <div class="col" id="pendientes">
+          <h3>Tareas Pendientes</h3>
+        </div>
+        <div class="col" id="en-proceso">
+          <h3>En proceso</h3>
+        </div>
+        <div class="col-2" id="realizado">
+          <h3>Realizado</h3>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
   </body>
 </html>

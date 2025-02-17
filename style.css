@@ -4,14 +4,25 @@ body{
     background: linear-gradient(to right, #1125e8, #11bee8);
 }
 
+header img{
+    width: 250px;
+    height: auto;
+    display: flex;
+    margin: 0;
+}
+
 header{
     display: flex;
     justify-content: center;
-    width: 50€;
+    width: 100%;
     height:auto ;
-    background-color: #2849c2;
+
 }
 
 header h2{
     color: white;
+}
+
+#pendientes{
+    margin:0;
 }
