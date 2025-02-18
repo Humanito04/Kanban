@@ -1,16 +1,10 @@
-
 function coloresTareas(){
-    let colores = ["red","green","blue","brown","yellow"];
-    let id = 0;
-
-        let task = Array.from(document.getElementsByClassName("task"));
-    
-        task.forEach(element =>{
-            let num = Math.floor(Math.random() * colores.length);
-            element.style.backgroundColor = colores[num];
-            id++;
-            element.id = id;
-        });
+    const letras = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letras[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 function generarId(){
@@ -19,8 +13,7 @@ function generarId(){
 }
 
 function addTarea(event){
-
-    event.preventDefautl();
+    event.preventDefault();
 
     let nombre = document.getElementById("nombre").value;
     let descripcion = document.getElementById("descripcion").value;
@@ -30,16 +23,18 @@ function addTarea(event){
     let tarea = document.createElement("div");
     tarea.draggable = true;
     tarea.id = generarId();
+    tarea.style.backgroundColor = coloresTareas();
+    tarea.classList.add("taskPendientes", "w-50", "p-3", "rounded", "text-white");
 
-    tarea.style.backgroundColor= coloresTareas();
-
-    const nombreP = document.createElement('p').textContent = `Nombre : ${nombre}`;
-    const descripcionP = document.createElement('p').textContent = `Descripcion : ${descripcion}`;
+    const nombreP = document.createElement('p');
+    nombreP.textContent = `Nombre : ${nombre}`;
+    const descripcionP = document.createElement('p');
+    descripcionP.textContent = `Descripcion : ${descripcion}`;
     
     tarea.appendChild(nombreP);
     tarea.appendChild(descripcionP);
     pendientes.appendChild(tarea);
 
-
-    
+    document.getElementById("nombre").value = "";
+    document.getElementById("descripcion").value = "";
 }
