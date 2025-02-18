@@ -15,12 +15,12 @@
   </head>
   <body>
     <header>
-      <img src="img/logo.jpg" alt="Logo de la App" />
-      <h2>KANBAN</h2>
+      <img src="img/logo.jpg" alt="Logo de la App" class="ml-5" />
+      <h2 class="p-5">KANBAN</h2>
     </header>
 
     <div class="container mt-5 d-flex justify-content-center text-white ">
-        <form action="post">
+        <form action="">
             <div class="form-group mb-3">
                 <label for="nombre">Nombre de Tarea:</label>
                 <input type="text" class="form-control" id="nombre" placeholder="Introduce el nombre de la Tarea">
@@ -29,20 +29,29 @@
                 <label for="descripcion">Descripción:</label>
                 <input type="text" class="form-control" id="descripcion" placeholder="Introduce una descripción">
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" onclick="addTarea(event)">Enviar</button>
         </form>
     </div>
 
     <div class="container mt-5">
-      <div class="row " >
-        <div class="col" id="pendientes">
-          <h3>Tareas Pendientes</h3>
+      <div class="row p-3" >
+        <div class="col-4" id="pendientes">
+          <h2>Tareas Pendientes</h2>
+          <div class="task w-50 p-3 rounded text-white" draggable="true">
+           
+          </div>
         </div>
-        <div class="col" id="en-proceso">
-          <h3>En proceso</h3>
+        <div class="col-4" id="en-proceso">
+          <h2>En proceso</h2>
+          <div class="task w-50 p-3 rounded text-white" draggable="true">
+            
+          </div>
         </div>
-        <div class="col-2" id="realizado">
-          <h3>Realizado</h3>
+        <div class="col-4" id="realizado">
+          <h2>Realizado</h2>
+          <div class="task w-50 p-3 rounded text-white" draggable="true">
+            
+          </div>
         </div>
       </div>
     </div>
